@@ -21,7 +21,7 @@ build: test ## Build Docker image
 	.
 
 .PHONY: example
-example: test ## Build hello/hello.proto with protoc
+example: test ## Get proto dependencies
 	docker run --rm -v $(HOME)/.ssh:/root/.ssh -v $(PWD):/tmp -w /tmp  protodep up -f -i id_rsa
 
 .PHONY: push
